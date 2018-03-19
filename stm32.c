@@ -757,7 +757,8 @@ static stm32_err_t stm32_mass_erase(const stm32_t *stm)
 		fprintf(stderr, "Mass erase failed. Try specifying the number of pages to be erased.\n");
 	if ((port->flags & PORT_STRETCH_W)
 	    && stm->cmd->er != STM32_CMD_EE_NS)
-		stm32_warn_stretching("mass erase");
+			stm32_warn_stretching("mass erase");
+
 		return STM32_ERR_UNKNOWN;
 	}
 	return STM32_ERR_OK;
